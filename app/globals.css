@@ -1,12 +1,57 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-html, body, #__next {
-  height: 100%;
+@layer base {
+  html, body, #__next { height: 100%; }
+
+  /* lighter global border color (applies to elements using plain `border`) */
+  *, *::before, *::after { border-color: #f1f5f9; }
+
+  body {
+    @apply antialiased;
+    background-color: #f8fafc; /* slate-50 */
+    color: #0f1724; /* slate-900 */
+    font-family: ui-sans-serif, system-ui, -apple-system, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+  }
+
+  h1 { @apply text-3xl md:text-4xl font-semibold leading-tight; }
+  h2 { @apply text-2xl md:text-3xl font-semibold leading-tight; }
+  h3 { @apply text-xl md:text-2xl font-semibold leading-snug; }
+  p  { @apply text-base; color: #334155; /* slate-700 */ }
+  a  { text-decoration-skip-ink: auto; color: #1f4fd6; /* accent-600 */ }
+  a:hover { color: #183fb0; /* accent-700 */ text-underline-offset: 2px; }
+
+  input, textarea, select, button { font-family: inherit; }
 }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md text-white text-sm font-medium shadow-sm transition-colors disabled:opacity-50;
+    background-color: #1f4fd6; /* accent-600 */
+  }
+  .btn:hover { background-color: #183fb0; /* accent-700 */ }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-3 py-2 rounded-md bg-white text-sm hover:shadow-sm transition;
+    border-color: #f1f5f9; /* lighter gray */
+    color: #0f1724; /* slate-900 */
+  }
+  .card {
+    @apply rounded-lg shadow-sm p-4;
+    background-color: #ffffff;
+    border-color: #f1f5f9; /* slate-100 */
+  }
+  .form-input {
+    @apply block w-full px-3 py-2 rounded-md bg-white text-sm placeholder:text-[#94a3b8] focus:outline-none;
+    border-color: #f1f5f9; /* lighter gray */
+    color: #0f1724; /* slate-900 */
+  }
+
+  .form-input:focus { box-shadow: 0 0 0 4px rgba(37,99,235,0.12); }
+  .muted { color: #64748b; /* slate-500 */ }
+}
+
+@layer utilities {
+  .focus-ring { outline: none; box-shadow: 0 0 0 4px rgba(37,99,235,0.12); }
 }

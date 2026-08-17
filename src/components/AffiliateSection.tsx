@@ -1,4 +1,4 @@
-import { AFFILIATE_LINKS } from '@/config/affiliates';
+import { AFFILIATE_LINKS } from '../config/affiliates';
 
 export function AffiliateSection() {
   if (!AFFILIATE_LINKS || AFFILIATE_LINKS.length === 0) {

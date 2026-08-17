@@ -1,6 +1,6 @@
 import { AFFILIATE_LINKS } from '../config/affiliates';
 
-export function AffiliateSection() {
+export default function AffiliateSection() {
   if (!AFFILIATE_LINKS || AFFILIATE_LINKS.length === 0) {
     return null;
   }

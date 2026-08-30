@@ -1,6 +1,6 @@
 # password-generator-deluxe
 
-シンプルなパスワード生成アプリ（Next.js）。公開前に基本情報と実行手順をまとめたREADMEです。
+シンプルなパスワード生成アプリ（Next.js）。
 
 ## 動作環境
 - Node.js 18+ 推奨
